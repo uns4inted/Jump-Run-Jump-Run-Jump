@@ -12,7 +12,7 @@ func _physics_process(delta):
 		if velocity.y > 500:
 			velocity.y = 500
 		
-	if Input.is_action_just_pressed("Jump"):
+	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		velocity.y = -jump_force
 	
 	var direction = Input.get_axis("Move Left", "Move Right")

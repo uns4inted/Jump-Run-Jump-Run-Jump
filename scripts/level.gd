@@ -3,6 +3,12 @@ extends Node2D
 @onready var start_position = $StartPosition
 @onready var player = $Player
 
+func _ready():
+	var traps = get_tree().get_nodes_in_group("traps")
+	for trap in traps:
+		#trap.connect("touched_player", _on_trap_touched_player) ## old syntax
+		trap.touched_player.connect(_on_trap_touched_player) ## godot 4 syntax
+
 func _process(delta):
 	## KEYBINDS FOR TESTING PURPOSES
 	if Input.is_action_just_pressed("Quit"):

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4etyclh1iapg"]
+[gd_scene load_steps=9 format=3 uid="uid://b4etyclh1iapg"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_k6yfv"]
+[ext_resource type="PackedScene" uid="uid://pyo3tqpcj7g7" path="res://scenes/bg.tscn" id="2_7m2u0"]
 [ext_resource type="PackedScene" uid="uid://x4f8ova3bx3w" path="res://scenes/player.tscn" id="2_dy7up"]
 [ext_resource type="PackedScene" uid="uid://bntgwf2w3d6gy" path="res://scenes/jump_pad.tscn" id="4_viqrg"]
 [ext_resource type="PackedScene" uid="uid://doaj8yq0xkc1q" path="res://scenes/saw.tscn" id="5_nkbd0"]
@@ -12,6 +13,8 @@ size = Vector2(1391.5, 20)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_k6yfv")
+
+[node name="BG" parent="." instance=ExtResource("2_7m2u0")]
 
 [node name="TileMap" parent="." instance=ExtResource("7_gpogg")]
 position = Vector2(-131, 42)

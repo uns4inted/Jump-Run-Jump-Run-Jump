@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4etyclh1iapg"]
+[gd_scene load_steps=11 format=3 uid="uid://b4etyclh1iapg"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_k6yfv"]
 [ext_resource type="PackedScene" uid="uid://pyo3tqpcj7g7" path="res://scenes/bg.tscn" id="2_7m2u0"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://doaj8yq0xkc1q" path="res://scenes/saw.tscn" id="5_nkbd0"]
 [ext_resource type="PackedScene" uid="uid://dapy4iau5pjsa" path="res://scenes/spiked_ball.tscn" id="6_dj3ve"]
 [ext_resource type="PackedScene" uid="uid://d1i3jyuhuwicb" path="res://scenes/tile_map.tscn" id="7_gpogg"]
+[ext_resource type="PackedScene" uid="uid://b2bkh8ib5anjg" path="res://scenes/exit.tscn" id="9_p3pi6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4mj4"]
 size = Vector2(1391.5, 20)
@@ -23,6 +24,9 @@ layer_0/tile_data = PackedInt32Array(655369, 458752, 0, 720905, 458752, 1, 78644
 
 [node name="Start" parent="." instance=ExtResource("4_r253m")]
 position = Vector2(25, 202)
+
+[node name="Exit" parent="." instance=ExtResource("9_p3pi6")]
+position = Vector2(110, 202)
 
 [node name="Player" parent="." instance=ExtResource("2_dy7up")]
 position = Vector2(37, 174)

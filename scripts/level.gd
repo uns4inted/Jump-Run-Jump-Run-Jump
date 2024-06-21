@@ -5,6 +5,7 @@ extends Node2D
 @onready var start = $Start
 @onready var exit = $Exit
 @onready var player = $Player
+@onready var deathzone = $Deathzone
 
 func _ready():
 	player.global_position = start.get_spawn_position()
@@ -15,6 +16,7 @@ func _ready():
 		trap.touched_player.connect(_on_trap_touched_player) ## godot 4 syntax
 	
 	exit.body_entered.connect(_on_exit_body_entered)
+	deathzone.body_entered.connect(_on_deathzone_body_entered)
 
 
 

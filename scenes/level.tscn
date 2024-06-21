@@ -10,9 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dapy4iau5pjsa" path="res://scenes/spiked_ball.tscn" id="6_dj3ve"]
 [ext_resource type="PackedScene" uid="uid://d1i3jyuhuwicb" path="res://scenes/tile_map.tscn" id="7_gpogg"]
 [ext_resource type="PackedScene" uid="uid://b2bkh8ib5anjg" path="res://scenes/exit.tscn" id="9_p3pi6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4mj4"]
-size = Vector2(1391.5, 20)
+[ext_resource type="PackedScene" uid="uid://ni5xafgn62kx" path="res://scenes/deathzone.tscn" id="11_b3si3"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_k6yfv")
@@ -70,13 +68,4 @@ position = Vector2(1129, 131)
 [node name="SpikedBall" parent="Traps" instance=ExtResource("6_dj3ve")]
 position = Vector2(805, 148)
 
-[node name="Deathzone" type="Area2D" parent="."]
-position = Vector2(159, -38)
-scale = Vector2(1.64, 1)
-collision_layer = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
-position = Vector2(250.25, 333)
-shape = SubResource("RectangleShape2D_b4mj4")
-
-[connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
+[node name="Deathzone" parent="." instance=ExtResource("11_b3si3")]

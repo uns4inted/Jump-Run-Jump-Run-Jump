@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4etyclh1iapg"]
+[gd_scene load_steps=13 format=3 uid="uid://b4etyclh1iapg"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_k6yfv"]
 [ext_resource type="PackedScene" uid="uid://1k0sfy6u1yue" path="res://scenes/level_2.tscn" id="2_1bdx6"]
@@ -11,10 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://d1i3jyuhuwicb" path="res://scenes/tile_map.tscn" id="7_gpogg"]
 [ext_resource type="PackedScene" uid="uid://b2bkh8ib5anjg" path="res://scenes/exit.tscn" id="9_p3pi6"]
 [ext_resource type="PackedScene" uid="uid://ni5xafgn62kx" path="res://scenes/deathzone.tscn" id="11_b3si3"]
+[ext_resource type="PackedScene" uid="uid://c5a1cgxpb7bxw" path="res://scenes/ui_layer.tscn" id="12_rpj62"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_k6yfv")
 next_level = ExtResource("2_1bdx6")
+
+[node name="UILayer" parent="." instance=ExtResource("12_rpj62")]
 
 [node name="BG" parent="." instance=ExtResource("2_7m2u0")]
 

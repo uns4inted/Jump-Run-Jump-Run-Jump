@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://odsfp1f5rsm2"]
+
+[ext_resource type="PackedScene" uid="uid://pyo3tqpcj7g7" path="res://scenes/bg.tscn" id="1_3onj7"]
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_kcqoq"]
+[ext_resource type="PackedScene" uid="uid://b4etyclh1iapg" path="res://scenes/level.tscn" id="2_5quaw"]
+[ext_resource type="Texture2D" uid="uid://t62nsaabcxmw" path="res://assets/textures/bg/Gray.png" id="2_pwf52"]
+[ext_resource type="FontFile" uid="uid://5ors3omse2k1" path="res://assets/fonts/Kenney Pixel Square.ttf" id="3_qvuyn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vmx16"]
+font = ExtResource("3_qvuyn")
+font_size = 24
+font_color = Color(0.407843, 0.658824, 0.901961, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.294118)
+
+[node name="StartMenu" type="Node2D"]
+script = ExtResource("1_kcqoq")
+first_level = ExtResource("2_5quaw")
+
+[node name="BG" parent="." instance=ExtResource("1_3onj7")]
+bg_texture = ExtResource("2_pwf52")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -44.0
+offset_right = 174.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "JUMP RUN JUMP RUN JUMP"
+label_settings = SubResource("LabelSettings_vmx16")
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 27.0
+offset_right = 80.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_qvuyn")
+theme_override_font_sizes/font_size = 18
+text = "PLAY"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 66.0
+offset_right = 80.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_qvuyn")
+theme_override_font_sizes/font_size = 14
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/Control/PlayButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/QuitButton" to="." method="_on_quit_button_pressed"]

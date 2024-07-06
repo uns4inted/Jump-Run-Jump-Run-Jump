@@ -51,7 +51,6 @@ func setup_level_timer():
 	
 
 func _on_level_timer_timeout():
-	print(time_left)
 	if level_completed:
 		timer_node.stop()
 	else:
@@ -73,6 +72,9 @@ func reset_player():
 	player.velocity = Vector2.ZERO
 	player.global_position = start.get_spawn_position()
 	
+	# TODO: make separete functtion for timer:
+	time_left = level_time
+	hud.set_time_label(time_left)
 
 func _on_exit_body_entered(body):
 	if body is Player:
